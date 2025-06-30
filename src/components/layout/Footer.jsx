@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 const Footer = () => {
   return (
-    <footer className="flex items-center justify-between px-20 py-4">
+    <footer className="flex items-center justify-between container mx-auto">
       <Link to="#" className="underline">
         Back
       </Link>

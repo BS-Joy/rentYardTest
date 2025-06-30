@@ -125,3 +125,7 @@
     @apply font-fustat;
   }
 }
+
+.PhoneInputInput:focus {
+  outline: none;
+}

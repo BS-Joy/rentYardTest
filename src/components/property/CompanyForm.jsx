@@ -117,6 +117,7 @@ const CompanyForm = () => {
               <div className="flex">
                 <PhoneInput
                   placeholder="Enter phone number"
+                  defaultCountry="BD"
                   value={value}
                   onChange={setValue}
                   className="w-full py-2 px-4 rounded-xl border border-[#e0e0e0]"
