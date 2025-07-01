@@ -4,6 +4,7 @@ import PropertyAddressForm from "./dialogContent/PropertyAddressForm";
 import LeasingForm from "./dialogContent/LeasingForm";
 import PetFeesForm from "./dialogContent/PetFeesForm";
 import ParkingForm from "./dialogContent/ParkingForm";
+import ChargesForm from "./dialogContent/ChargesForm";
 
 const CondoInfoPage = () => {
   const [openDialog, setOpenDialog] = useState(null);
@@ -58,6 +59,15 @@ const CondoInfoPage = () => {
         />
 
         {/* charges */}
+        <CondoInfoCard
+          card_title="Charges"
+          dialogTitle="Parking"
+          cardNotice="Required"
+          redNotice
+          formContent={<ChargesForm setOpen={() => setOpenDialog(null)} />}
+          open={openDialog === "charges"}
+          setOpen={(val) => setOpenDialog(val ? "charges" : null)}
+        />
 
         {/* nearest education */}
 

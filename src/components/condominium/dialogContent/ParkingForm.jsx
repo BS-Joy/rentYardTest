@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Label } from "../../ui/label";
 import {
   Select,
   SelectContent,
@@ -17,7 +16,7 @@ const ParkingForm = () => {
     <div className="px-6 py-6">
       <div className="space-y-6">
         {/* Guest vehicle parking time */}
-        <div className="border rounded-lg p-4 w-fit">
+        <div className="border rounded-lg p-2 pl-4 w-fit">
           <div className="flex items-center gap-8 justify-between">
             <span className="text-base font-semibold">
               Guest vehicle parking time
@@ -55,7 +54,7 @@ const ParkingForm = () => {
               value={overviewText}
               onChange={(e) => setOverviewText(e.target.value)}
               maxLength={maxLength}
-              className="min-h-[200px] border-gray-300 focus:border-blue-500 focus:ring-blue-500 resize-none pr-16"
+              className="min-h-[200px] focus:border-blue-500 focus:ring-blue-500 pr-16"
             />
             <div className="absolute bottom-3 right-3 text-sm text-gray-400">
               {maxLength - overviewText.length}
@@ -66,7 +65,7 @@ const ParkingForm = () => {
 
       {/* Add Button */}
       <div className="flex justify-end mt-8">
-        <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-2 h-11 rounded-lg font-medium">
+        <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-2 h-11 rounded-lg font-medium">
           Add
         </Button>
       </div>

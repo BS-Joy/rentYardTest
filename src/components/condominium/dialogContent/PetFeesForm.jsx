@@ -21,7 +21,7 @@ const PetFeesForm = () => {
               Pet type<span className="text-red-500">*</span>
             </Label>
             <Select>
-              <SelectTrigger className="h-11 py-5 w-full border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+              <SelectTrigger className="h-11 py-5 w-full focus:border-blue-500 focus:ring-blue-500">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent>
@@ -39,8 +39,8 @@ const PetFeesForm = () => {
             </Label>
             <Input
               id="max-weight"
-              defaultValue="100"
-              className="h-11 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              placeholder="100"
+              className="h-11 focus:border-blue-500 focus:ring-blue-500"
             />
           </div>
         </div>
@@ -53,8 +53,8 @@ const PetFeesForm = () => {
             </Label>
             <Input
               id="one-time-fee"
-              defaultValue="$100"
-              className="h-11 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              placeholder="$100"
+              className="h-11 focus:border-blue-500 focus:ring-blue-500"
             />
           </div>
           <div className="space-y-2">
@@ -63,8 +63,8 @@ const PetFeesForm = () => {
             </Label>
             <Input
               id="security-deposit"
-              defaultValue="$100"
-              className="h-11 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              placeholder="$100"
+              className="h-11 focus:border-blue-500 focus:ring-blue-500"
             />
           </div>
           <div className="space-y-2">
@@ -73,8 +73,8 @@ const PetFeesForm = () => {
             </Label>
             <Input
               id="monthly-rent"
-              defaultValue="$100"
-              className="h-11 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              placeholder="$100"
+              className="h-11 focus:border-blue-500 focus:ring-blue-500"
             />
           </div>
         </div>

@@ -33,7 +33,10 @@ const CondoInfoCard = ({
       </Button> */}
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button variant="outline" className="border-none text-primary">
+          <Button
+            variant="outline"
+            className="border-none underline text-primary"
+          >
             <Plus /> Add
           </Button>
         </DialogTrigger>
