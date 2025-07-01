@@ -34,14 +34,22 @@ const Footer = () => {
       <Link to={previousRoute} className="underline">
         Back
       </Link>
-      <Button
-        onClick={() => navigate(nextRoute)}
-        variant="default"
-        size="lg"
-        className="font-semibold text-base"
-      >
-        {buttonText}
-      </Button>
+
+      {/* button */}
+      <div className="flex gap-2 items-center">
+        <p className="text-lg font-medium text-gray-text">
+          Total with card charge:{" "}
+          <span className="text-xl font-bold text-black">$970</span>
+        </p>
+        <Button
+          onClick={() => navigate(nextRoute)}
+          variant="default"
+          size="lg"
+          className="font-semibold text-base"
+        >
+          {buttonText}
+        </Button>
+      </div>
     </footer>
   );
 };
