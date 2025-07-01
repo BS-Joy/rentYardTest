@@ -17,8 +17,8 @@ const CompanyForm = () => {
   const [value, setValue] = useState();
   return (
     <div className="flex flex-col items-start gap-4 w-full mt-10">
-      <div className="w-full border border-solid border-[#e0e0e0] border-t-0 rounded-[14px] overflow-hidden">
-        <div className="flex items-center justify-center gap-2.5 px-4 py-3.5 bg-[#f3f3f3] rounded-[14px_14px_0px_0px] border border-solid border-[#e0e0e0]">
+      <div className="w-full border border-solid border-stock border-t-0 rounded-[14px] overflow-hidden">
+        <div className="flex items-center justify-center gap-2.5 px-4 py-3.5 bg-[#f3f3f3] rounded-[14px_14px_0px_0px] border border-solid border-stock">
           <h3 className="flex-1 font-headline-h5-headline text-tetx-color-gray text-[length:var(--headline-h5-headline-font-size)] tracking-[var(--headline-h5-headline-letter-spacing)] leading-[var(--headline-h5-headline-line-height)]">
             Company &amp; office info
           </h3>
@@ -32,7 +32,7 @@ const CompanyForm = () => {
                 Company name*
               </div>
               <Input
-                className="h-12 rounded-xl border border-solid border-[#e0e0e0]"
+                className="h-12 rounded-xl border border-solid border-stock"
                 defaultValue="Runyan trade center"
               />
             </div>
@@ -42,7 +42,7 @@ const CompanyForm = () => {
                 Company Identifier(EIN/TIN)*
               </div>
               <Input
-                className="h-12 rounded-xl border border-solid border-[#e0e0e0]"
+                className="h-12 rounded-xl border border-solid border-stock"
                 defaultValue="Name"
               />
             </div>
@@ -52,7 +52,7 @@ const CompanyForm = () => {
                 Your job title*
               </div>
               <Input
-                className="h-12 rounded-xl border border-solid border-[#e0e0e0]"
+                className="h-12 rounded-xl border border-solid border-stock"
                 defaultValue="Manager"
               />
             </div>
@@ -61,7 +61,7 @@ const CompanyForm = () => {
               <div className="mb-2.5 font-body-body-text-1 text-[#272b35] text-[length:var(--body-body-text-1-font-size)] tracking-[var(--body-body-text-1-letter-spacing)] leading-[var(--body-body-text-1-line-height)]">
                 Agreement with landlord/owner*
               </div>
-              <div className="flex items-center justify-center h-12 bg-[#f6f6f6] rounded-xl border border-dashed border-[#e0e0e0]">
+              <div className="flex items-center justify-center h-12 bg-[#f6f6f6] rounded-xl border border-dashed border-stock">
                 <div className="flex items-center gap-2.5">
                   <img className="w-6 h-6" alt="uploadIcon" src={uploadIcon} />
                   <span className="font-semibold text-gray-text text-sm whitespace-nowrap">
@@ -79,7 +79,7 @@ const CompanyForm = () => {
                 Country/Region*
               </div>
               <Select>
-                <SelectTrigger className="h-12 py-6 rounded-xl border border-solid border-[#e0e0e0] w-full">
+                <SelectTrigger className="h-12 py-6 rounded-xl border border-solid border-stock w-full">
                   <SelectValue placeholder="Choose country" />
                 </SelectTrigger>
                 <SelectContent>
@@ -95,7 +95,7 @@ const CompanyForm = () => {
                 Street address*
               </div>
               <Input
-                className="h-12 rounded-xl border border-solid border-[#e0e0e0]"
+                className="h-12 rounded-xl border border-solid border-stock"
                 defaultValue="111 Austin Ave"
               />
             </div>
@@ -105,7 +105,7 @@ const CompanyForm = () => {
                 Apt, suit, unit (if applicable)
               </div>
               <Input
-                className="h-12 rounded-xl border border-solid border-[#e0e0e0]"
+                className="h-12 rounded-xl border border-solid border-stock"
                 defaultValue="3050"
               />
             </div>
@@ -120,7 +120,7 @@ const CompanyForm = () => {
                   defaultCountry="BD"
                   value={value}
                   onChange={setValue}
-                  className="w-full py-2 px-4 rounded-xl border border-[#e0e0e0]"
+                  className="w-full py-2 px-4 rounded-xl border border-stock focus-within:border-ring"
                 />
               </div>
             </div>
@@ -133,7 +133,7 @@ const CompanyForm = () => {
                 Contact email*
               </div>
               <Input
-                className="h-12 rounded-xl border border-solid border-[#e0e0e0]"
+                className="h-12 rounded-xl border border-solid border-stock"
                 defaultValue="majarul2025@gmail.com"
                 type="email"
               />
@@ -144,7 +144,7 @@ const CompanyForm = () => {
                 City/Town*
               </div>
               <Input
-                className="h-12 rounded-xl border border-solid border-[#e0e0e0]"
+                className="h-12 rounded-xl border border-solid border-stock"
                 defaultValue="Dallas"
               />
             </div>
@@ -154,7 +154,7 @@ const CompanyForm = () => {
                 State/Territory*
               </div>
               <Select>
-                <SelectTrigger className="h-12 py-6 w-full rounded-xl border border-solid border-[#e0e0e0]">
+                <SelectTrigger className="h-12 py-6 w-full rounded-xl border border-solid border-stock">
                   <SelectValue placeholder="Choose state" />
                 </SelectTrigger>
                 <SelectContent>
@@ -170,7 +170,7 @@ const CompanyForm = () => {
                 Zip code*
               </div>
               <Input
-                className="h-12 rounded-xl border border-solid border-[#e0e0e0]"
+                className="h-12 rounded-xl border border-solid border-stock"
                 defaultValue="75061"
               />
             </div>

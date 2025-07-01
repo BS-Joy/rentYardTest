@@ -11,7 +11,7 @@ const LeasingForm = () => {
   const [value, setValue] = useState();
   return (
     <div className="px-6 py-6">
-      <div className="space-y-6">
+      <div className="space-y-6 border-b pb-5">
         {/* First Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
@@ -21,7 +21,7 @@ const LeasingForm = () => {
             <Input
               id="manager-name"
               placeholder="Alex johan"
-              className="h-11 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              className="h-11"
             />
           </div>
           <div className="space-y-2">
@@ -35,7 +35,7 @@ const LeasingForm = () => {
                 defaultCountry="BD"
                 value={value}
                 onChange={setValue}
-                className="w-full py-2 px-4 rounded-xl border border-[#e0e0e0]"
+                className="w-full py-2 px-4 rounded-xl border border-stock focus-within:border-ring"
               />
             </div>
           </div>
@@ -50,7 +50,7 @@ const LeasingForm = () => {
             <Input
               id="manager-email"
               placeholder="leasing@rentyeard.com"
-              className="h-11 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              className="h-11"
             />
           </div>
           <div className="flex items-center space-x-2 pb-1">
@@ -58,7 +58,7 @@ const LeasingForm = () => {
               id="same-address"
               checked={addressSameAsProperty}
               onCheckedChange={setAddressSameAsProperty}
-              className="data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600"
+              className=""
             />
             <Label
               htmlFor="same-address"
@@ -71,8 +71,8 @@ const LeasingForm = () => {
       </div>
 
       {/* Add Button */}
-      <div className="flex justify-end mt-8">
-        <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-2 h-11 rounded-lg font-medium">
+      <div className="flex justify-end mt-5">
+        <Button className="bg-primary hover:bg-primary/90 text-white text-base px-8 py-2 h-11 rounded-lg font-bold">
           Add
         </Button>
       </div>

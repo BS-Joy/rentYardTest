@@ -14,25 +14,22 @@ import { Info } from "lucide-react";
 const ChargesForm = () => {
   return (
     <div className="px-6 py-6">
-      <div className="space-y-6">
+      <div className="space-y-6 border-b pb-5">
         {/* Application and Admin fees row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Application fee with combined input and dropdown */}
           <div className="space-y-2">
-            <Label
-              htmlFor="application-fee"
-              className="text-sm font-medium text-gray-700"
-            >
+            <Label htmlFor="application-fee">
               Application fee(one-time)<span className="text-red-500">*</span>
             </Label>
             <div className="flex">
               <Input
                 id="application-fee"
                 placeholder="100"
-                className="h-11 border-gray-300 border-r-0 rounded-r-none  flex-1"
+                className="h-11 border-r-0 rounded-r-none flex-1"
               />
               <Select defaultValue="all-18">
-                <SelectTrigger className="w-48 h-11 py-[21px] border-gray-300 rounded-l-none ">
+                <SelectTrigger className="w-48 h-11 py-[21px] rounded-l-none ">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -49,10 +46,7 @@ const ChargesForm = () => {
 
           {/* Admin fee */}
           <div className="space-y-2">
-            <Label
-              htmlFor="admin-fee"
-              className="text-sm font-medium text-gray-700"
-            >
+            <Label htmlFor="admin-fee">
               Admin fee(one-time)<span className="text-red-500">*</span>
             </Label>
             <Input id="admin-fee" placeholder="15" className="h-11" />
@@ -61,13 +55,13 @@ const ChargesForm = () => {
       </div>
 
       {/* Add Button */}
-      <div className="flex justify-between items-center mt-8">
+      <div className="flex justify-between items-center mt-5">
         {/* Info message */}
         <div className="flex items-center gap-2 text-base font-semibold">
           <Info className="h-4 w-4" />
           <span>Type 0 if charges not applicable</span>
         </div>
-        <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-2 h-11 rounded-lg font-medium">
+        <Button className="bg-primary hover:bg-primary/90 text-white text-base px-8 py-2 h-11 rounded-lg font-bold">
           Add
         </Button>
       </div>
