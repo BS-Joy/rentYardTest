@@ -11,10 +11,30 @@ import {
 import uploadIcon from "../../assets/icons/upload-02.svg";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const CompanyForm = () => {
   const [value, setValue] = useState();
+  const [agreementFile, setAgreementFile] = useState(null);
+  const agreementInputRef = useRef(null);
+
+  const handleAgreementClick = () => {
+    agreementInputRef.current && agreementInputRef.current.click();
+  };
+
+  const handleAgreementChange = (e) => {
+    const file = e.target.files[0];
+    if (file && file.type === "application/pdf") {
+      setAgreementFile(file);
+    }
+  };
+
+  const handleAgreementRemove = (e) => {
+    e.stopPropagation();
+    setAgreementFile(null);
+    if (agreementInputRef.current) agreementInputRef.current.value = "";
+  };
+
   return (
     <div className="flex flex-col items-start gap-4 w-full mt-10">
       <div className="w-full border border-solid border-stock border-t-0 rounded-[14px] overflow-hidden">
@@ -61,13 +81,42 @@ const CompanyForm = () => {
               <div className="mb-2.5 font-body-body-text-1 text-[#272b35] text-[length:var(--body-body-text-1-font-size)] tracking-[var(--body-body-text-1-letter-spacing)] leading-[var(--body-body-text-1-line-height)]">
                 Agreement with landlord/owner*
               </div>
-              <div className="flex items-center justify-center h-12 bg-[#f6f6f6] rounded-xl border border-dashed border-stock">
-                <div className="flex items-center gap-2.5">
-                  <img className="w-6 h-6" alt="uploadIcon" src={uploadIcon} />
-                  <span className="font-semibold text-gray-text text-sm whitespace-nowrap">
-                    (Pdf only)
-                  </span>
-                </div>
+              <div
+                className="flex items-center justify-center h-12 bg-[#f6f6f6] rounded-xl border border-dashed border-stock cursor-pointer relative"
+                onClick={handleAgreementClick}
+              >
+                <input
+                  type="file"
+                  accept="application/pdf"
+                  ref={agreementInputRef}
+                  style={{ display: "none" }}
+                  onChange={handleAgreementChange}
+                />
+                {agreementFile ? (
+                  <div className="flex items-center gap-2.5 w-full px-2 justify-between">
+                    <span className="font-semibold text-gray-text text-sm truncate max-w-[120px]">
+                      {agreementFile.name}
+                    </span>
+                    <button
+                      type="button"
+                      className="ml-2 text-gray-400 hover:text-red-500"
+                      onClick={handleAgreementRemove}
+                    >
+                      &#10005;
+                    </button>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-2.5">
+                    <img
+                      className="w-6 h-6"
+                      alt="uploadIcon"
+                      src={uploadIcon}
+                    />
+                    <span className="font-semibold text-gray-text text-sm whitespace-nowrap">
+                      (Pdf only)
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
