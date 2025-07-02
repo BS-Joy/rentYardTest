@@ -30,17 +30,19 @@ const Footer = () => {
   }
 
   return (
-    <footer className="flex items-center justify-between container mx-auto py-8">
+    <footer className="flex items-center justify-between container mx-auto py-8 px-2 sm:px-0">
       <Link to={previousRoute} className="underline">
         Back
       </Link>
 
       {/* button */}
       <div className="flex gap-2 items-center">
-        <p className="text-lg font-medium text-gray-text">
-          Total with card charge:{" "}
-          <span className="text-xl font-bold text-black">$970</span>
-        </p>
+        {currentPath === "/pricing" && (
+          <p className="text-lg font-medium text-gray-text">
+            Total with card charge:{" "}
+            <span className="text-xl font-bold text-black">$970</span>
+          </p>
+        )}
         <Button
           onClick={() => navigate(nextRoute)}
           variant="default"

@@ -7,7 +7,7 @@ export const Navbar = () => {
   const currentPath = location.pathname;
 
   return (
-    <header className="py-4 border-b border-stock">
+    <header className="py-4 border-b border-stock px-2 sm:px-0">
       <div className="container mx-auto w-full flex justify-between items-center">
         <img
           className="w-[147.28px] h-[38.78px] object-cover"

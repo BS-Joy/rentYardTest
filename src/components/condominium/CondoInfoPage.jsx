@@ -25,7 +25,7 @@ const CondoInfoPage = () => {
       <h1 className="font-bold text-2xl mb-8">Condominiums information</h1>
 
       {/* informations */}
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {/* property address */}
         <CondoInfoCard
           card_title="Property address"

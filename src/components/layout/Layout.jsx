@@ -7,7 +7,7 @@ const Layout = () => {
   return (
     <section className="font-fustat">
       <Navbar />
-      <div className="container mx-auto">
+      <div className="container mx-auto px-2 sm:px-o">
         <Outlet />
       </div>
       <Steps />
