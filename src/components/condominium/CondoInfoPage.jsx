@@ -24,6 +24,9 @@ const CondoInfoPage = () => {
     <div className="container mx-auto py-10">
       <h1 className="font-bold text-2xl mb-8">Condominiums information</h1>
 
+      <p className="text-red-400 font-semibold">
+        (Only this one is functional 👇)
+      </p>
       {/* informations */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {/* property address */}

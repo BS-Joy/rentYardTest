@@ -13,20 +13,20 @@ import { Button } from "../../ui/button";
 import { useProperty } from "../../../hooks/UseProperty";
 
 const PropertyAddress = ({ setOpen }) => {
-  const { setPropertyData } = useProperty();
+  const { propertyData, setPropertyData } = useProperty();
 
-  // Local state for form fields
-  const [form, setForm] = useState({
-    propertyName: "",
-    apartmentUnits: "",
-    propertyWebsite: "",
-    country: "",
-    streetAddress: "",
-    aptSuite: "",
-    city: "",
-    state: "",
-    zipCode: "",
-  });
+  // Local state for form fields, initialized from propertyData.address if available
+  const [form, setForm] = useState(() => ({
+    propertyName: propertyData?.address?.propertyName || "",
+    apartmentUnits: propertyData?.address?.apartmentUnits || "",
+    propertyWebsite: propertyData?.address?.propertyWebsite || "",
+    country: propertyData?.address?.country || "",
+    streetAddress: propertyData?.address?.streetAddress || "",
+    aptSuite: propertyData?.address?.aptSuite || "",
+    city: propertyData?.address?.city || "",
+    state: propertyData?.address?.state || "",
+    zipCode: propertyData?.address?.zipCode || "",
+  }));
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -94,7 +94,10 @@ const PropertyAddress = ({ setOpen }) => {
             <Label htmlFor="country">
               Country/Region<span className="text-red-500">*</span>
             </Label>
-            <Select onValueChange={(v) => handleSelect("country", v)}>
+            <Select
+              value={form.country}
+              onValueChange={(v) => handleSelect("country", v)}
+            >
               <SelectTrigger className="h-12 py-[21px] w-full border-gray-300 focus:border-blue-500 focus:ring-blue-500">
                 <SelectValue placeholder="Choose country" />
               </SelectTrigger>
@@ -150,7 +153,10 @@ const PropertyAddress = ({ setOpen }) => {
             <Label htmlFor="state">
               State/Territory<span className="text-red-500">*</span>
             </Label>
-            <Select onValueChange={(v) => handleSelect("state", v)}>
+            <Select
+              value={form.state}
+              onValueChange={(v) => handleSelect("state", v)}
+            >
               <SelectTrigger className="h-12 py-[21px] w-full border-gray-300 focus:border-blue-500 focus:ring-blue-500">
                 <SelectValue placeholder="Choose state" />
               </SelectTrigger>

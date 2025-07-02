@@ -19,7 +19,6 @@ const CondoInfoCard = ({
   setOpen,
   cardData,
 }) => {
-  console.log(cardData);
   return (
     <Card className={`gap-2 ${cardData ? "" : "flex-row items-center"}`}>
       {/* card header */}
@@ -36,7 +35,7 @@ const CondoInfoCard = ({
               variant="outline"
               className="border-none underline text-primary"
             >
-              <Plus /> Add
+              <Plus /> {cardData ? "Edit" : "Add"}
             </Button>
           </DialogTrigger>
           <DialogContent className="min-w-4xl p-0 gap-0">
